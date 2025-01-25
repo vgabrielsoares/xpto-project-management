@@ -1,0 +1,36 @@
+entity Project {
+  name String required,
+  description TextBlob,
+  startDate LocalDate required,
+  endDate LocalDate,
+  status ProjectStatus required
+}
+
+entity Task {
+  title String required,
+  description TextBlob,
+  deadline Integer required, // days
+  status TaskStatus required
+}
+
+enum ProjectStatus {
+  PLANNED,
+  IN_PROGRESS,
+  ABORTED,
+  COMPLETED
+}
+
+enum TaskStatus {
+  PLANNED,
+  IN_PROGRESS,
+  ABORTED,
+  COMPLETED
+}
+
+relationship OneToMany {
+  Project{tasks} to Task{project(name)}
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate Task with pagination
