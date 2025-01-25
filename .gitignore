@@ -151,3 +151,30 @@ Desktop.ini
 ######################
 coverage/
 .nyc_output/
+
+######################
+# Python
+######################
+__pycache__/
+*.py[cod]
+*$py.class
+
+######################
+# Jupyter Notebooks
+######################
+.ipynb_checkpoints/
+
+######################
+# Additional IDEs
+######################
+# NetBeans
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+.history/
