@@ -1,11 +1,11 @@
 id;name;description;start_date;end_date;status
-1;abaft sentimental clone;../fake-data/blob/hipster.txt;2025-01-25;2025-01-25;IN_PROGRESS
-2;charming;../fake-data/blob/hipster.txt;2025-01-25;2025-01-25;ABORTED
-3;stark enroll;../fake-data/blob/hipster.txt;2025-01-25;2025-01-25;PLANNED
-4;remark;../fake-data/blob/hipster.txt;2025-01-25;2025-01-25;ABORTED
-5;interior except;../fake-data/blob/hipster.txt;2025-01-25;2025-01-25;ABORTED
-6;hopelessly blank;../fake-data/blob/hipster.txt;2025-01-25;2025-01-25;PLANNED
-7;phooey secularize wholly;../fake-data/blob/hipster.txt;2025-01-25;2025-01-25;PLANNED
-8;vet portly;../fake-data/blob/hipster.txt;2025-01-25;2025-01-25;IN_PROGRESS
-9;opposite midst;../fake-data/blob/hipster.txt;2025-01-25;2025-01-25;ABORTED
-10;humble heighten regarding;../fake-data/blob/hipster.txt;2025-01-25;2025-01-25;IN_PROGRESS
+1;abaft sentimental clone;;2025-01-25;2025-01-25;IN_PROGRESS
+2;charming;;2025-01-25;2025-01-25;ABORTED
+3;stark enroll;;2025-01-25;2025-01-25;PLANNED
+4;remark;;2025-01-25;2025-01-25;ABORTED
+5;interior except;;2025-01-25;2025-01-25;ABORTED
+6;hopelessly blank;;2025-01-25;2025-01-25;PLANNED
+7;phooey secularize wholly;;2025-01-25;2025-01-25;PLANNED
+8;vet portly;;2025-01-25;2025-01-25;IN_PROGRESS
+9;opposite midst;;2025-01-25;2025-01-25;ABORTED
+10;humble heighten regarding;;2025-01-25;2025-01-25;IN_PROGRESS
