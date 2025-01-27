@@ -41,6 +41,9 @@ public class CacheConfiguration {
             createCache(cm, com.xpto.projectmanagment.repository.UserRepository.USERS_BY_LOGIN_CACHE);
             createCache(cm, com.xpto.projectmanagment.repository.UserRepository.USERS_BY_EMAIL_CACHE);
             createCache(cm, com.xpto.projectmanagment.domain.Authority.class.getName());
+            createCache(cm, com.xpto.projectmanagment.domain.Project.class.getName());
+            createCache(cm, com.xpto.projectmanagment.domain.Project.class.getName() + ".tasks");
+            createCache(cm, com.xpto.projectmanagment.domain.Task.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
