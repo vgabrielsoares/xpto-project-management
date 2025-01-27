@@ -16,8 +16,8 @@ export const Home = () => {
         <span className="hipster rounded" />
       </Col>
       <Col md="9">
-        <h1 className="display-4">Welcome, Java Hipster!</h1>
-        <p className="lead">This is your homepage</p>
+        <h1 className="display-4">Welcome to the Project Repository!</h1>
+        <p className="lead">This is your centralized source for project information</p>
         {account?.login ? (
           <div>
             <Alert color="success">You are logged in as user &quot;{account.login}&quot;.</Alert>
@@ -43,7 +43,14 @@ export const Home = () => {
             </Alert>
           </div>
         )}
-        <p>If you have any question on JHipster:</p>
+        <p>Here you can:</p>
+
+        <ul>
+          <li>Search for projects by name</li>
+          <li>Check the status or phase of execution of projects</li>
+        </ul>
+
+        <p>If you have any questions:</p>
 
         <ul>
           <li>
