@@ -4,6 +4,7 @@ import com.xpto.projectmanagment.domain.Task;
 import com.xpto.projectmanagment.repository.TaskRepository;
 import com.xpto.projectmanagment.service.dto.TaskDTO;
 import com.xpto.projectmanagment.service.mapper.TaskMapper;
+import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -87,6 +88,12 @@ public class TaskService {
     public Page<TaskDTO> findAll(Pageable pageable) {
         LOG.debug("Request to get all Tasks");
         return taskRepository.findAll(pageable).map(taskMapper::toDto);
+    }
+
+    @Transactional(readOnly = true)
+    public List<TaskDTO> findAll() {
+        LOG.debug("Request to get all Tasks without pagination");
+        return taskRepository.findAll().stream().map(taskMapper::toDto).toList();
     }
 
     /**

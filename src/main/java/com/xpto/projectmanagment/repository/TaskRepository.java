@@ -26,16 +26,15 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
         return this.findAllWithToOneRelationships(pageable);
     }
 
-    @Query(
-        value = "SELECT * FROM task LEFT JOIN project ON task.project_id = project.id",
-        countQuery = "SELECT COUNT(*) FROM task",
-        nativeQuery = true
-    )
+    @Query("SELECT t FROM Task t LEFT JOIN FETCH t.project")
     Page<Task> findAllWithToOneRelationships(Pageable pageable);
 
-    @Query(value = "SELECT * FROM task LEFT JOIN project ON task.project_id = project.id", nativeQuery = true)
+    @Query("SELECT t FROM Task t LEFT JOIN FETCH t.project")
     List<Task> findAllWithToOneRelationships();
 
-    @Query(value = "SELECT * FROM task LEFT JOIN project ON task.project_id = project.id WHERE task.id = :id", nativeQuery = true)
+    @Query("SELECT t FROM Task t LEFT JOIN FETCH t.project WHERE t.id = :id")
     Optional<Task> findOneWithToOneRelationships(@Param("id") Long id);
+
+    @Query("SELECT t FROM Task t LEFT JOIN FETCH t.project")
+    List<Task> findAll();
 }

@@ -157,14 +157,13 @@ public class TaskResource {
         @RequestParam(name = "eagerload", required = false, defaultValue = "true") boolean eagerload
     ) {
         LOG.debug("REST request to get a page of Tasks");
-        Page<TaskDTO> page;
+        List<TaskDTO> tasks;
         if (eagerload) {
-            page = taskService.findAllWithEagerRelationships(pageable);
+            tasks = taskService.findAllWithEagerRelationships(pageable).getContent();
         } else {
-            page = taskService.findAll(pageable);
+            tasks = taskService.findAll();
         }
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
-        return ResponseEntity.ok().headers(headers).body(page.getContent());
+        return ResponseEntity.ok().body(tasks);
     }
 
     /**
