@@ -95,10 +95,11 @@ public class ProjectService {
      * @param id the id of the entity.
      * @return the entity.
      */
+
     @Transactional(readOnly = true)
     public Optional<ProjectDTO> findOne(Long id) {
         LOG.debug("Request to get Project : {}", id);
-        return projectRepository.findById(id).map(projectMapper::toDto);
+        return projectRepository.findOne(id).map(projectMapper::toDto);
     }
 
     /**
