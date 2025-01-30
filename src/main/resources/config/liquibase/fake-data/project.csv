@@ -1,11 +1,11 @@
-id;name;description;start_date;end_date;status
-1;Website Redesign;Complete overhaul of the company website;2025-01-01;2025-06-30;IN_PROGRESS
-2;Mobile App Development;Develop a mobile application for our services;2024-03-15;2024-12-20;ABORTED
-3;Cloud Migration;Migrate all services to the cloud;2025-02-01;2025-12-31;PLANNED
-4;Marketing Campaign;Launch a new marketing campaign;2024-05-01;2024-09-30;ABORTED
-5;Customer Portal;Create a portal for customers to manage their accounts;2025-04-01;2025-11-30;ABORTED
-6;Data Analysis;Analyze customer data to improve services;2025-03-01;2025-08-31;PLANNED
-7;Security Upgrade;Enhance the security of our systems;2025-06-01;2025-12-31;PLANNED
-8;New Product Launch;Launch a new product line;2025-01-15;2025-07-15;IN_PROGRESS
-9;Employee Training;Conduct training sessions for employees;2024-07-01;2024-12-31;ABORTED
-10;Infrastructure Upgrade;Upgrade the company's IT infrastructure;2025-02-15;2025-10-15;IN_PROGRESS
+id;name;description;start_date;end_date;status;team
+1;Website Redesign;Complete overhaul of the company website;2025-01-01;2025-06-30;IN_PROGRESS;ADMFIN
+2;Mobile App Development;Develop a mobile application for our services;2024-03-15;2024-12-20;ABORTED;ADMPLN
+3;Cloud Migration;Migrate all services to the cloud;2025-02-01;2025-12-31;PLANNED;ADMAPO
+4;Marketing Campaign;Launch a new marketing campaign;2024-05-01;2024-09-30;ABORTED;ADMFIN
+5;Customer Portal;Create a portal for customers to manage their accounts;2025-04-01;2025-11-30;ABORTED;ADMPLN
+6;Data Analysis;Analyze customer data to improve services;2025-03-01;2025-08-31;PLANNED;ADMAPO
+7;Security Upgrade;Enhance the security of our systems;2025-06-01;2025-12-31;PLANNED;ADMFIN
+8;New Product Launch;Launch a new product line;2025-01-15;2025-07-15;IN_PROGRESS;ADMPLN
+9;Employee Training;Conduct training sessions for employees;2024-07-01;2024-12-31;ABORTED;ADMAPO
+10;Infrastructure Upgrade;Upgrade the company's IT infrastructure;2025-02-15;2025-10-15;IN_PROGRESS;ADMFIN
