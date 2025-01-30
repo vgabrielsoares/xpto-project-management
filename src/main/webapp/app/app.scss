@@ -6,11 +6,18 @@
 @import 'bootswatch/dist/darkly/bootswatch';
 body {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #343a40;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
 a {
-  color: #533f03;
-  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 * {
@@ -30,10 +37,14 @@ a {
     height: calc(100% - 40px);
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 1rem;
+    padding: 2rem;
     .card {
       margin-top: 1vh;
-      padding: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 0.25rem;
+      background-color: #495057;
+      color: #ffffff;
     }
     .view-routes {
       height: 100%;
@@ -312,6 +323,19 @@ http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
 
 .width-min {
   width: 1% !important;
+}
+
+/* Responsive utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.5rem;
+  }
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
