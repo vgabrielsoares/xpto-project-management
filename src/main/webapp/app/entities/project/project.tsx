@@ -18,6 +18,7 @@ export const Project = () => {
   const navigate = useNavigate();
 
   const [sortState, setSortState] = useState(overrideSortStateWithQueryParams(getSortState(pageLocation, 'id'), pageLocation.search));
+  const [searchTerm, setSearchTerm] = useState('');
 
   const projectList = useAppSelector(state => state.project.entities);
   const loading = useAppSelector(state => state.project.loading);
@@ -54,6 +55,12 @@ export const Project = () => {
     sortEntities();
   };
 
+  const handleSearch = event => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredProjects = projectList.filter(project => project.name.toLowerCase().includes(searchTerm.toLowerCase()));
+
   const getSortIconByFieldName = (fieldName: string) => {
     const sortFieldName = sortState.sort;
     const order = sortState.order;
@@ -68,6 +75,7 @@ export const Project = () => {
       <h2 id="project-heading" data-cy="ProjectHeading">
         Projects
         <div className="d-flex justify-content-end">
+          <input type="text" placeholder="Search by name" value={searchTerm} onChange={handleSearch} className="form-control me-2" />
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} /> Refresh list
           </Button>
@@ -78,7 +86,7 @@ export const Project = () => {
         </div>
       </h2>
       <div className="table-responsive">
-        {projectList && projectList.length > 0 ? (
+        {filteredProjects && filteredProjects.length > 0 ? (
           <Table responsive>
             <thead>
               <tr>
@@ -107,7 +115,7 @@ export const Project = () => {
               </tr>
             </thead>
             <tbody>
-              {projectList.map((project, i) => (
+              {filteredProjects.map((project, i) => (
                 <tr key={`entity-${i}`} data-cy="entityTable">
                   <td>
                     <Button tag={Link} to={`/project/${project.id}`} color="link" size="sm">
