@@ -28,6 +28,12 @@
       "fieldType": "ProjectStatus",
       "fieldValidateRules": ["required"],
       "fieldValues": "PLANNED,IN_PROGRESS,ABORTED,COMPLETED"
+    },
+    {
+      "fieldName": "team",
+      "fieldType": "ProjectTeam",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ADMFIN,ADMPLN,ADMAPO"
     }
   ],
   "name": "Project",

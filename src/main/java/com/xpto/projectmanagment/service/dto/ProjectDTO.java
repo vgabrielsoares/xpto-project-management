@@ -1,6 +1,7 @@
 package com.xpto.projectmanagment.service.dto;
 
 import com.xpto.projectmanagment.domain.enumeration.ProjectStatus;
+import com.xpto.projectmanagment.domain.enumeration.ProjectTeam;
 import jakarta.persistence.Lob;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
@@ -28,6 +29,9 @@ public class ProjectDTO implements Serializable {
 
     @NotNull
     private ProjectStatus status;
+
+    @NotNull
+    private ProjectTeam team;
 
     public Long getId() {
         return id;
@@ -77,6 +81,14 @@ public class ProjectDTO implements Serializable {
         this.status = status;
     }
 
+    public ProjectTeam getTeam() {
+        return team;
+    }
+
+    public void setTeam(ProjectTeam team) {
+        this.team = team;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -108,6 +120,7 @@ public class ProjectDTO implements Serializable {
                 ", startDate='" + getStartDate() + "'" +
                 ", endDate='" + getEndDate() + "'" +
                 ", status='" + getStatus() + "'" +
+                ", team='" + getTeam() + "'" +
                 "}";
     }
 }
