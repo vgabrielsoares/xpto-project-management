@@ -107,6 +107,9 @@ export const ProjectUpdate = () => {
               />
               <ValidatedField label="End Date" id="project-endDate" name="endDate" data-cy="endDate" type="date" />
               <ValidatedField label="Status" id="project-status" name="status" data-cy="status" type="select">
+                <option value="" key="0">
+                  Select a Status...
+                </option>
                 {projectStatusValues.map(projectStatus => (
                   <option value={projectStatus} key={projectStatus}>
                     {projectStatus}
@@ -114,6 +117,9 @@ export const ProjectUpdate = () => {
                 ))}
               </ValidatedField>
               <ValidatedField label="Team" id="project-team" name="team" data-cy="team" type="select">
+                <option value="" key="0">
+                  Select a Team...
+                </option>
                 {projectTeamValues.map(projectTeam => (
                   <option value={projectTeam} key={projectTeam}>
                     {projectTeam}
