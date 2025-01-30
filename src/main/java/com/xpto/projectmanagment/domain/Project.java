@@ -2,6 +2,7 @@ package com.xpto.projectmanagment.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.xpto.projectmanagment.domain.enumeration.ProjectStatus;
+import com.xpto.projectmanagment.domain.enumeration.ProjectTeam;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
@@ -43,6 +44,11 @@ public class Project implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private ProjectStatus status;
+
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    @Column(name = "team", nullable = false)
+    private ProjectTeam team;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "project")
     @JsonIgnoreProperties(value = { "project" }, allowSetters = true)
@@ -126,6 +132,19 @@ public class Project implements Serializable {
         this.status = status;
     }
 
+    public ProjectTeam getTeam() {
+        return this.team;
+    }
+
+    public Project team(ProjectTeam team) {
+        this.setTeam(team);
+        return this;
+    }
+
+    public void setTeam(ProjectTeam team) {
+        this.team = team;
+    }
+
     public Set<Task> getTasks() {
         return this.tasks;
     }
@@ -185,6 +204,7 @@ public class Project implements Serializable {
                 ", startDate='" + getStartDate() + "'" +
                 ", endDate='" + getEndDate() + "'" +
                 ", status='" + getStatus() + "'" +
+                ", team='" + getTeam() + "'" +
                 "}";
     }
 }
