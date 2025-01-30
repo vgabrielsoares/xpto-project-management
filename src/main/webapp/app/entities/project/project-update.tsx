@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { ProjectStatus } from 'app/shared/model/enumerations/project-status.model';
+import { ProjectTeam } from 'app/shared/model/enumerations/project-team.model';
 import { createEntity, getEntity, reset, updateEntity } from './project.reducer';
 
 export const ProjectUpdate = () => {
@@ -22,6 +23,7 @@ export const ProjectUpdate = () => {
   const updating = useAppSelector(state => state.project.updating);
   const updateSuccess = useAppSelector(state => state.project.updateSuccess);
   const projectStatusValues = Object.keys(ProjectStatus);
+  const projectTeamValues = Object.keys(ProjectTeam);
 
   const handleClose = () => {
     navigate('/project');
@@ -108,6 +110,13 @@ export const ProjectUpdate = () => {
                 {projectStatusValues.map(projectStatus => (
                   <option value={projectStatus} key={projectStatus}>
                     {projectStatus}
+                  </option>
+                ))}
+              </ValidatedField>
+              <ValidatedField label="Team" id="project-team" name="team" data-cy="team" type="select">
+                {projectTeamValues.map(projectTeam => (
+                  <option value={projectTeam} key={projectTeam}>
+                    {projectTeam}
                   </option>
                 ))}
               </ValidatedField>

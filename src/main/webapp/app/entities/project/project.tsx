@@ -100,6 +100,9 @@ export const Project = () => {
                 <th className="hand" onClick={sort('status')}>
                   Status <FontAwesomeIcon icon={getSortIconByFieldName('status')} />
                 </th>
+                <th className="hand" onClick={sort('team')}>
+                  Team <FontAwesomeIcon icon={getSortIconByFieldName('team')} />
+                </th>
                 <th />
               </tr>
             </thead>
@@ -116,6 +119,7 @@ export const Project = () => {
                   <td>{project.startDate ? <TextFormat type="date" value={project.startDate} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
                   <td>{project.endDate ? <TextFormat type="date" value={project.endDate} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
                   <td>{project.status}</td>
+                  <td>{project.team}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/project/${project.id}`} color="info" size="sm" data-cy="entityDetailsButton">
