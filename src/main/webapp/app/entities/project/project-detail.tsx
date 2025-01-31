@@ -50,6 +50,10 @@ export const ProjectDetail = () => {
             <span id="status">Status</span>
           </dt>
           <dd>{projectEntity.status}</dd>
+          <dt>
+            <span id="team">Team</span>
+          </dt>
+          <dd>{projectEntity.team}</dd>
         </dl>
         <Button tag={Link} to="/project" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Back</span>

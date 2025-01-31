@@ -43,6 +43,10 @@ export const TaskDetail = () => {
             <span id="status">Status</span>
           </dt>
           <dd>{taskEntity.status}</dd>
+          <dt>
+            <span id="responsible">Responsible</span>
+          </dt>
+          <dd>{taskEntity.responsible}</dd>
           <dt>Project</dt>
           <dd>{taskEntity.project ? taskEntity.project.name : ''}</dd>
         </dl>
