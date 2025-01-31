@@ -122,6 +122,9 @@ export const Task = () => {
                 <th className="hand" onClick={sort('status')}>
                   Status <FontAwesomeIcon icon={getSortIconByFieldName('status')} />
                 </th>
+                <th className="hand" onClick={sort('responsible')}>
+                  Responsible <FontAwesomeIcon icon={getSortIconByFieldName('responsible')} />
+                </th>
                 <th>
                   Project <FontAwesomeIcon icon="sort" />
                 </th>
@@ -140,6 +143,7 @@ export const Task = () => {
                   <td>{task.description}</td>
                   <td>{task.deadline}</td>
                   <td>{task.status}</td>
+                  <td>{task.responsible}</td>
                   <td>{task.project ? <Link to={`/project/${task.project.id}`}>{task.project.name}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">

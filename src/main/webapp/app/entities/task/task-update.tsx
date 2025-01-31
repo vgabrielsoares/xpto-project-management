@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { getEntities as getProjects } from 'app/entities/project/project.reducer';
 import { TaskStatus } from 'app/shared/model/enumerations/task-status.model';
 import { createEntity, getEntity, reset, updateEntity } from './task.reducer';
+import { TaskResponsible } from 'app/shared/model/enumerations/task-responsible.model';
 
 export const TaskUpdate = () => {
   const dispatch = useAppDispatch();
@@ -24,6 +25,7 @@ export const TaskUpdate = () => {
   const updating = useAppSelector(state => state.task.updating);
   const updateSuccess = useAppSelector(state => state.task.updateSuccess);
   const taskStatusValues = Object.keys(TaskStatus);
+  const taskResponsibleValues = Object.keys(TaskResponsible);
 
   const handleClose = () => {
     navigate(`/task${location.search}`);
@@ -114,9 +116,22 @@ export const TaskUpdate = () => {
                 }}
               />
               <ValidatedField label="Status" id="task-status" name="status" data-cy="status" type="select">
+                <option value="" key="0">
+                  Select a Task Status...
+                </option>
                 {taskStatusValues.map(taskStatus => (
                   <option value={taskStatus} key={taskStatus}>
                     {taskStatus}
+                  </option>
+                ))}
+              </ValidatedField>
+              <ValidatedField label="Responsible" id="task-responsible" name="responsible" data-cy="responsible" type="select">
+                <option value="" key="0">
+                  Select a Task Responsible...
+                </option>
+                {taskResponsibleValues.map(taskResponsible => (
+                  <option value={taskResponsible} key={taskResponsible}>
+                    {taskResponsible}
                   </option>
                 ))}
               </ValidatedField>
