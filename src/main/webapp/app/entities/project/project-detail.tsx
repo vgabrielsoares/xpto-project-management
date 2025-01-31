@@ -89,6 +89,16 @@ export const ProjectDetail = () => {
                 <dd>{projectEntity.team}</dd>
               </Col>
             </Row>
+            <Row className="detail-item">
+              <Col md="6">
+                <dt>Tasks</dt>
+              </Col>
+              <Col md="6">
+                <dd>
+                  <ul>{projectEntity?.tasks?.map(task => <li key={task.id}>{task.title}</li>)}</ul>
+                </dd>
+              </Col>
+            </Row>
           </dl>
           <div className="button-group">
             <Button tag={Link} to="/project" replace color="info" data-cy="entityDetailsBackButton">

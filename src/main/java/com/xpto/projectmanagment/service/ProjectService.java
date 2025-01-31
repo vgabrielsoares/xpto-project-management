@@ -86,7 +86,7 @@ public class ProjectService {
     @Transactional(readOnly = true)
     public List<ProjectDTO> findAll() {
         LOG.debug("Request to get all Projects");
-        return projectRepository.findAll().stream().map(projectMapper::toDto).collect(Collectors.toCollection(LinkedList::new));
+        return projectRepository.findAllWithTasks().stream().map(projectMapper::toDto).collect(Collectors.toCollection(LinkedList::new));
     }
 
     /**
@@ -99,7 +99,7 @@ public class ProjectService {
     @Transactional(readOnly = true)
     public Optional<ProjectDTO> findOne(Long id) {
         LOG.debug("Request to get Project : {}", id);
-        return projectRepository.findOne(id).map(projectMapper::toDto);
+        return projectRepository.findOneWithTasks(id).map(projectMapper::toDto);
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.xpto.projectmanagment.service.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.xpto.projectmanagment.domain.enumeration.TaskResponsible;
 import com.xpto.projectmanagment.domain.enumeration.TaskStatus;
 import jakarta.persistence.Lob;
@@ -11,6 +12,7 @@ import java.util.Objects;
  * A DTO for the {@link com.xpto.projectmanagment.domain.Task} entity.
  */
 @SuppressWarnings("common-java:DuplicatedBlocks")
+@JsonIgnoreProperties(value = { "project" }, allowSetters = true)
 public class TaskDTO implements Serializable {
 
     private Long id;
@@ -117,7 +119,6 @@ public class TaskDTO implements Serializable {
                 ", description='" + getDescription() + "'" +
                 ", deadline=" + getDeadline() +
                 ", status='" + getStatus() + "'" +
-                ", project=" + getProject() +
                 ", responsible='" + getResponsible() + "'" +
                 "}";
     }

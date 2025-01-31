@@ -4,6 +4,7 @@ import com.xpto.projectmanagment.domain.Project;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.*;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,9 +13,9 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, Long> {
-    @Query(value = "SELECT * FROM project", nativeQuery = true)
-    List<Project> findAll();
+    @Query("SELECT p FROM Project p LEFT JOIN FETCH p.tasks")
+    List<Project> findAllWithTasks();
 
-    @Query(value = "SELECT * FROM project WHERE id = ?1", nativeQuery = true)
-    Optional<Project> findOne(Long id);
+    @Query("SELECT p FROM Project p LEFT JOIN FETCH p.tasks WHERE p.id = :id")
+    Optional<Project> findOneWithTasks(@Param("id") Long id);
 }

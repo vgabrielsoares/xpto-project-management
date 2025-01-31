@@ -6,7 +6,9 @@ import jakarta.persistence.Lob;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A DTO for the {@link com.xpto.projectmanagment.domain.Project} entity.
@@ -32,6 +34,8 @@ public class ProjectDTO implements Serializable {
 
     @NotNull
     private ProjectTeam team;
+
+    private Set<TaskDTO> tasks = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -89,6 +93,14 @@ public class ProjectDTO implements Serializable {
         this.team = team;
     }
 
+    public Set<TaskDTO> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(Set<TaskDTO> tasks) {
+        this.tasks = tasks;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -121,6 +133,7 @@ public class ProjectDTO implements Serializable {
                 ", endDate='" + getEndDate() + "'" +
                 ", status='" + getStatus() + "'" +
                 ", team='" + getTeam() + "'" +
+                ", tasks=" + getTasks() +
                 "}";
     }
 }
