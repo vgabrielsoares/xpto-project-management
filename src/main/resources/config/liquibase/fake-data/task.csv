@@ -1,11 +1,11 @@
-id;title;description;deadline;status;project_id
-1;Prepare project proposal;Draft the initial project proposal document;27612;PLANNED;1
-2;Client meeting;Discuss project requirements with the client;3269;COMPLETED;2
-3;Design database schema;Create the initial database schema design;23766;PLANNED;3
-4;Develop login module;Implement the user authentication module;2223;PLANNED;4
-5;Write unit tests;Create unit tests for the existing codebase;20872;PLANNED;5
-6;Code review;Review code submitted by team members;20829;COMPLETED;6
-7;Update documentation;Update the project documentation with recent changes;11160;PLANNED;7
-8;Deploy to staging;Deploy the latest version to the staging environment;19519;COMPLETED;8
-9;Fix bugs;Resolve bugs reported by the QA team;24970;IN_PROGRESS;9
-10;Optimize performance;Improve the performance of the application;4592;PLANNED;10
+id;title;description;deadline;status;project_id;responsible
+1;Prepare project proposal;Draft the initial project proposal document;7;PLANNED;1;PLO
+2;Client meeting;Discuss project requirements with the client;3;COMPLETED;2;GFU
+3;Design database schema;Create the initial database schema design;7;PLANNED;3;CTB
+4;Develop login module;Implement the user authentication module;1;PLANNED;4;GBP
+5;Write unit tests;Create unit tests for the existing codebase;2;PLANNED;5;PLO
+6;Code review;Review code submitted by team members;1;COMPLETED;6;GFU
+7;Update documentation;Update the project documentation with recent changes;2;PLANNED;7;CTB
+8;Deploy to staging;Deploy the latest version to the staging environment;7;COMPLETED;8;GBP
+9;Fix bugs;Resolve bugs reported by the QA team;7;IN_PROGRESS;9;PLO
+10;Optimize performance;Improve the performance of the application;14;PLANNED;10;GFU
