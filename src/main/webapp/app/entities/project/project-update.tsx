@@ -73,7 +73,7 @@ export const ProjectUpdate = () => {
       <Row className="justify-content-center">
         <Col md="8">
           <h2 id="xptoApp.project.home.createOrEditLabel" data-cy="ProjectCreateUpdateHeading">
-            Create or edit a Project
+            {isNew ? 'Create a Project' : 'Edit a Project'}
           </h2>
         </Col>
       </Row>

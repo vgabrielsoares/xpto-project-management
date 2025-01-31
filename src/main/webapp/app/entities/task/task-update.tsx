@@ -82,7 +82,7 @@ export const TaskUpdate = () => {
       <Row className="justify-content-center">
         <Col md="8">
           <h2 id="xptoApp.task.home.createOrEditLabel" data-cy="TaskCreateUpdateHeading">
-            Create or edit a Task
+            {isNew ? 'Create a Task' : 'Edit a Task'}
           </h2>
         </Col>
       </Row>
