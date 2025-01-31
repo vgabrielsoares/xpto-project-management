@@ -6,26 +6,21 @@ This application was generated using JHipster 8.8.0, you can find documentation 
 
 Node is required for generation and recommended for development. `package.json` is always generated for a better development experience with prettier, commit hooks, scripts and so on.
 
-In the project root, JHipster generates configuration files for tools like git, prettier, eslint, husky, and others that are well known and you can find references in the web.
+In the project root, JHipster generates configuration files for tools like git, prettier, eslint, husky, and others.
 
 `/src/*` structure follows default Java structure.
 
 - `.yo-rc.json` - Yeoman configuration file
-  JHipster configuration is stored in this file at `generator-jhipster` key. You may find `generator-jhipster-*` for specific blueprints configuration.
 - `.yo-resolve` (optional) - Yeoman conflict resolver
-  Allows to use a specific action when conflicts are found skipping prompts for files that matches a pattern. Each line should match `[pattern] [action]` with pattern been a [Minimatch](https://github.com/isaacs/minimatch#minimatch) pattern and action been one of skip (default if omitted) or force. Lines starting with `#` are considered comments and are ignored.
 - `.jhipster/*.json` - JHipster entity configuration files
-
 - `npmw` - wrapper to use locally installed npm.
-  JHipster installs Node and npm locally using the build tool by default. This wrapper makes sure npm is installed locally and uses it avoiding some differences different versions can cause. By using `./npmw` instead of the traditional `npm` you can configure a Node-less environment to develop or test your application.
 - `/src/main/docker` - Docker configurations for the application and services that the application depends on
 
 ## Development
 
 The build system will install automatically the recommended version of Node and npm.
 
-We provide a wrapper to launch npm.
-You will only need to run this command when dependencies change in [package.json](package.json).
+We provide a wrapper to launch npm. You will only need to run this command when dependencies change in [package.json](package.json).
 
 ```
 ./npmw install
@@ -33,17 +28,16 @@ You will only need to run this command when dependencies change in [package.json
 
 We use npm scripts and [Webpack][] as our build system.
 
-Run the following commands in two separate terminals to create a blissful development experience where your browser
-auto-refreshes when files change on your hard drive.
+Run the following commands in two separate terminals to create a blissful development experience where your browser auto-refreshes when files change on your hard drive.
 
 ```
 ./mvnw
 ./npmw start
 ```
 
-Npm is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
-specifying a newer version in [package.json](package.json). You can also run `./npmw update` and `./npmw install` to manage dependencies.
-Add the `help` flag on any command to see how you can use it. For example, `./npmw help update`.
+If `./npmw` or `./mvnw` doesn't work, you can still use `npm` and `mvn` as normal.
+
+Npm is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by specifying a newer version in [package.json](package.json). You can also run `./npmw update` and `./npmw install` to manage dependencies. Add the `help` flag on any command to see how you can use it. For example, `./npmw help update`.
 
 The `./npmw run` command will list all the scripts available to run for this project.
 
@@ -67,20 +61,19 @@ Note: [Workbox](https://developers.google.com/web/tools/workbox/) powers JHipste
 
 ### Managing dependencies
 
-For example, to add [Leaflet][] library as a runtime dependency of your application, you would run following command:
+For example, to add [Leaflet][] library as a runtime dependency of your application, you would run the following command:
 
 ```
 ./npmw install --save --save-exact leaflet
 ```
 
-To benefit from TypeScript type definitions from [DefinitelyTyped][] repository in development, you would run following command:
+To benefit from TypeScript type definitions from [DefinitelyTyped][] repository in development, you would run the following command:
 
 ```
 ./npmw install --save-dev --save-exact @types/leaflet
 ```
 
-Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
-Note: There are still a few other things remaining to do for Leaflet that we won't detail here.
+Then you would import the JS and CSS files specified in the library's installation instructions so that [Webpack][] knows about them.
 
 For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
 
@@ -94,8 +87,7 @@ To build the final jar and optimize the xpto application for production, run:
 ./mvnw -Pprod clean verify
 ```
 
-This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
-To ensure everything worked, run:
+This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files. To ensure everything worked, run:
 
 ```
 java -jar target/*.jar
@@ -139,20 +131,17 @@ Unit tests are run by [Jest][]. They're located in [src/test/javascript/](src/te
 ./npmw test
 ```
 
-UI end-to-end tests are powered by [Cypress][]. They're located in [src/test/javascript/cypress](src/test/javascript/cypress)
-and can be run by starting Spring Boot in one terminal (`./mvnw spring-boot:run`) and running the tests (`./npmw run e2e`) in a second one.
+UI end-to-end tests are powered by [Cypress][]. They're located in [src/test/javascript/cypress](src/test/javascript/cypress) and can be run by starting Spring Boot in one terminal (`./mvnw spring-boot:run`) and running the tests (`./npmw run e2e`) in a second one.
 
 #### Lighthouse audits
 
-You can execute automated [Lighthouse audits](https://developers.google.com/web/tools/lighthouse/) with [cypress-audit](https://github.com/mfrachet/cypress-audit) by running `./npmw run e2e:cypress:audits`.
-You should only run the audits when your application is packaged with the production profile.
-The lighthouse report is created in `target/cypress/lhreport.html`
+You can execute automated [Lighthouse audits](https://developers.google.com/web/tools/lighthouse/) with [cypress-audit](https://github.com/mfrachet/cypress-audit) by running `./npmw run e2e:cypress:audits`. You should only run the audits when your application is packaged with the production profile. The lighthouse report is created in `target/cypress/lhreport.html`.
 
 ## Others
 
 ### Code quality using Sonar
 
-Sonar is used to analyse code quality. You can start a local Sonar server (accessible on http://localhost:9001) with:
+Sonar is used to analyze code quality. You can start a local Sonar server (accessible on http://localhost:9001) with:
 
 ```
 docker compose -f src/main/docker/sonar.yml up -d
@@ -160,7 +149,7 @@ docker compose -f src/main/docker/sonar.yml up -d
 
 Note: we have turned off forced authentication redirect for UI in [src/main/docker/sonar.yml](src/main/docker/sonar.yml) for out of the box experience while trying out SonarQube, for real use cases turn it back on.
 
-You can run a Sonar analysis with using the [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) or by using the maven plugin.
+You can run a Sonar analysis using the [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) or by using the maven plugin.
 
 Then, run a Sonar analysis:
 
@@ -174,7 +163,7 @@ If you need to re-run the Sonar phase, please be sure to specify at least the `i
 ./mvnw initialize sonar:sonar -Dsonar.login=admin -Dsonar.password=admin
 ```
 
-Additionally, Instead of passing `sonar.password` and `sonar.login` as CLI arguments, these parameters can be configured from [sonar-project.properties](sonar-project.properties) as shown below:
+Additionally, instead of passing `sonar.password` and `sonar.login` as CLI arguments, these parameters can be configured from [sonar-project.properties](sonar-project.properties) as shown below:
 
 ```
 sonar.login=admin
@@ -185,7 +174,7 @@ For more information, refer to the [Code quality page][].
 
 ### Docker Compose support
 
-JHipster generates a number of Docker Compose configuration files in the [src/main/docker/](src/main/docker/) folder to launch required third party services.
+JHipster generates a number of Docker Compose configuration files in the [src/main/docker/](src/main/docker/) folder to launch required third-party services.
 
 For example, to start required services in Docker containers, run:
 
@@ -209,14 +198,13 @@ spring:
       enabled: false
 ```
 
-You can also fully dockerize your application and all the services that it depends on.
-To achieve this, first build a Docker image of your app by running:
+You can also fully dockerize your application and all the services that it depends on. To achieve this, first build a Docker image of your app by running:
 
 ```sh
 npm run java:docker
 ```
 
-Or build a arm64 Docker image when using an arm64 processor os like MacOS with M1 processor family running:
+Or build an arm64 Docker image when using an arm64 processor OS like MacOS with M1 processor family by running:
 
 ```sh
 npm run java:docker:arm64
@@ -233,6 +221,22 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 ## Continuous Integration (optional)
 
 To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
+
+## Default Login
+
+The default login credentials for the application are:
+
+- **Username:** admin
+- **Password:** admin
+
+Alternatively, you can use:
+
+- **Username:** user
+- **Password:** user
+
+## Local Database Configuration
+
+A local database configuration is needed in the `.yml` files like `application-dev.yml`. This project uses PostgreSQL.
 
 [JHipster Homepage and latest documentation]: https://www.jhipster.tech
 [JHipster 8.8.0 archive]: https://www.jhipster.tech/documentation-archive/v8.8.0
