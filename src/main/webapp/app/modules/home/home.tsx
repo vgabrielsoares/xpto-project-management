@@ -17,7 +17,7 @@ export const Home = () => {
           </Button>
         </div>
         <div className="button-column">
-          <Button tag={Link} to="/tasks" color="primary" className="custom-button">
+          <Button tag={Link} to="/task" color="primary" className="custom-button">
             Tasks
           </Button>
           <Button tag={Link} to="/task/new" color="primary" className="custom-button">
