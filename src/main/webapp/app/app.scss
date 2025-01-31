@@ -339,3 +339,34 @@ http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+
+.task-detail,
+.project-detail {
+  .detail-row,
+  .detail-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .jh-entity-details {
+    dt {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    dd {
+      margin-bottom: 1rem;
+    }
+  }
+  .detail-item {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-items: baseline;
+  }
+  .button-group {
+    margin-top: 2rem;
+    button {
+      margin-right: 1rem;
+    }
+  }
+}
