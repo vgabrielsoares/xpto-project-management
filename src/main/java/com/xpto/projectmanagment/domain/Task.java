@@ -1,6 +1,7 @@
 package com.xpto.projectmanagment.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.xpto.projectmanagment.domain.enumeration.TaskResponsible;
 import com.xpto.projectmanagment.domain.enumeration.TaskStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -37,6 +38,10 @@ public class Task implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private TaskStatus status;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "responsible")
+    private TaskResponsible responsible;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "tasks" }, allowSetters = true)
@@ -107,6 +112,19 @@ public class Task implements Serializable {
         this.status = status;
     }
 
+    public TaskResponsible getResponsible() {
+        return this.responsible;
+    }
+
+    public Task responsible(TaskResponsible responsible) {
+        this.setResponsible(responsible);
+        return this;
+    }
+
+    public void setResponsible(TaskResponsible responsible) {
+        this.responsible = responsible;
+    }
+
     public Project getProject() {
         return this.project;
     }
@@ -147,6 +165,7 @@ public class Task implements Serializable {
                 ", description='" + getDescription() + "'" +
                 ", deadline=" + getDeadline() +
                 ", status='" + getStatus() + "'" +
+                ", responsible='" + getResponsible() + "'" +
                 "}";
     }
 }

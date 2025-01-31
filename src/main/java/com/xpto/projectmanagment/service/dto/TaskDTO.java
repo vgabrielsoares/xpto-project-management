@@ -1,5 +1,6 @@
 package com.xpto.projectmanagment.service.dto;
 
+import com.xpto.projectmanagment.domain.enumeration.TaskResponsible;
 import com.xpto.projectmanagment.domain.enumeration.TaskStatus;
 import jakarta.persistence.Lob;
 import jakarta.validation.constraints.*;
@@ -27,6 +28,8 @@ public class TaskDTO implements Serializable {
     private TaskStatus status;
 
     private ProjectDTO project;
+
+    private TaskResponsible responsible;
 
     public Long getId() {
         return id;
@@ -76,6 +79,14 @@ public class TaskDTO implements Serializable {
         this.project = project;
     }
 
+    public TaskResponsible getResponsible() {
+        return responsible;
+    }
+
+    public void setResponsible(TaskResponsible responsible) {
+        this.responsible = responsible;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -107,6 +118,7 @@ public class TaskDTO implements Serializable {
                 ", deadline=" + getDeadline() +
                 ", status='" + getStatus() + "'" +
                 ", project=" + getProject() +
+                ", responsible='" + getResponsible() + "'" +
                 "}";
     }
 }
